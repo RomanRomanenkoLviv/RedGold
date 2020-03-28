@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html class="no-js">
+{% include '../_parts/head.twig' %}
+
+<body>
+    {% include '../_parts/header.twig' %}
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    {% include '../_parts/footer.twig' %}
+
+    {% include '../_parts/js.twig' %}
+</body>
+
+</html>

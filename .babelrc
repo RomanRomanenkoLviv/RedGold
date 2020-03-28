@@ -1,0 +1,13 @@
+{
+  "presets": [
+    ["@babel/preset-env", {
+      "targets": {
+        "browsers": ["last 2 versions"]
+      }
+    }]
+  ],
+  "plugins": ["@babel/plugin-syntax-dynamic-import"],
+  "parserOpts": {
+    "plugins": ["transform-object-rest-spread", "transform-es2015-spread", "transform-es2015-destructuring"]
+  }
+}

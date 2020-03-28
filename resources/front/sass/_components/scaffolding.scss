@@ -1,0 +1,65 @@
+// Reset
+
+html {
+	font-size: 10px;
+}
+
+body {
+	fill: $body-color;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility !important;
+	// @include zoom(font-size, $fz-base);
+}
+
+* {
+	outline: none !important;
+}
+
+
+// Transitions
+
+button,
+.btn,
+a {
+	transition: $transition;
+}
+
+
+// Text
+
+//** text selection
+// ::selection {
+//     background-color: lighten(theme-color("primary"), 50%);
+// }
+
+// h1, .h1, h2, .h2, h3, .h3,
+// h4, .h4, h5, .h5, h6, .h6 {
+// }
+
+// .h1, h1 {}
+
+// .h2, h2 {}
+
+// .h3, h3 {}
+
+// .h4, h4 {}
+
+// .h5, h5 {}
+
+// .h6, h6 {}
+
+
+// Forms
+
+textarea {
+	resize: vertical;
+}
+
+
+// Misc
+
+abbr[title] {
+	text-decoration: none;
+	border-bottom: 0;
+	cursor: inherit !important;
+}

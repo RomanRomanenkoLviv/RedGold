@@ -1,0 +1,45 @@
+//# Fonts
+//
+//*
+
+@mixin font-face($family, $filepath, $weight: normal, $style: normal) {
+	@font-face {
+		font-family: $family;
+		font-display: swap;
+		src: local($family),
+			url('#{$filepath}.woff') format('woff'),
+			url('#{$filepath}.ttf') format('truetype');
+		font-weight: $weight;
+		font-style: $style;
+	}
+}
+
+//** Font weight hint
+// 100 – thin
+// 200 – extra light
+// 300 – light
+// 400 – regular (normal)
+// 500 – medium
+// 600 – semibold
+// 700 – bold
+// 800 – extrabold
+// 900 – black
+
+@include font-face('Custom', '../fonts/Custom/Custom-Thin', 100);
+@include font-face('Custom', '../fonts/Custom/Custom-ThinItalic', 100, italic);
+@include font-face('Custom', '../fonts/Custom/Custom-ExtraLight', 200);
+@include font-face('Custom', '../fonts/Custom/Custom-ExtraLightItalic', 200, italic);
+@include font-face('Custom', '../fonts/Custom/Custom-Light', 300);
+@include font-face('Custom', '../fonts/Custom/Custom-LightItalic', 300, italic);
+@include font-face('Custom', '../fonts/Custom/Custom-Regular', 400);
+@include font-face('Custom', '../fonts/Custom/Custom-RegularItalic', 400, italic);
+@include font-face('Custom', '../fonts/Custom/Custom-Medium', 500);
+@include font-face('Custom', '../fonts/Custom/Custom-MediumItalic', 500, italic);
+@include font-face('Custom', '../fonts/Custom/Custom-SemiBold', 600);
+@include font-face('Custom', '../fonts/Custom/Custom-SemiBoldItalic', 600, italic);
+@include font-face('Custom', '../fonts/Custom/Custom-Bold', 700);
+@include font-face('Custom', '../fonts/Custom/Custom-BoldItalic', 700, italic);
+@include font-face('Custom', '../fonts/Custom/Custom-ExtraBold', 800);
+@include font-face('Custom', '../fonts/Custom/Custom-ExtraBoldItalic', 800, italic);
+@include font-face('Custom', '../fonts/Custom/Custom-Black', 900);
+@include font-face('Custom', '../fonts/Custom/Custom-BlackItalic', 900, italic);

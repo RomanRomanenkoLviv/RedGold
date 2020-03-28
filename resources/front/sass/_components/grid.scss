@@ -1,0 +1,19 @@
+body {
+	max-width: $body-max-width;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	// background-color: red;
+
+	>main {
+		flex-grow: 1;
+	}
+}
+
+.o-box {
+	@include make-container;
+
+	// max-width: $box-max-width;
+}

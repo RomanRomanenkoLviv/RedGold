@@ -6,14 +6,20 @@
         "framework",
         "laravel"
     ],
+    "repositories": [
+    ],
     "license": "MIT",
     "require": {
         "php": "^7.2.5",
+        "caouecs/laravel-lang": "^4.0",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^1.0",
         "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "^7.0",
-        "laravel/tinker": "^2.0"
+        "laravel/tinker": "^2.0",
+        "laravel/ui": "^2.0",
+        "nunomaduro/larastan": "^0.5.2",
+        "sentry/sentry-laravel": "^1.7"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
@@ -49,6 +55,9 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
+        "post-install-cmd": [
+            "@php artisan allright:check --ansi"
+        ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
@@ -57,7 +66,10 @@
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
         "post-create-project-cmd": [
-            "@php artisan key:generate --ansi"
+            "@php artisan key:generate --ansi",
+            "@php artisan init:lang-files uk",
+            "@php artisan init:lang-files ru",
+            "@php artisan prompt-install-nova --ansi < /dev/tty"
         ]
     }
 }

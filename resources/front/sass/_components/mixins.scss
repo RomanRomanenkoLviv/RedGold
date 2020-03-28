@@ -1,0 +1,13 @@
+@mixin fw($class, $value) {
+	#{$class} {
+		font-weight: $value !important;
+	}
+}
+
+@mixin zoom($parameter, $value) {
+	#{$parameter}: $value;
+
+	@include media-breakpoint-up(lg) {
+		#{$parameter}: calc(100vw * #{number($value)} / 1024);
+	}
+}

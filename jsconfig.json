@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+        "target": "es2018",
+        "allowSyntheticDefaultImports": false,
+        "baseUrl": "./",
+        "paths": {
+            "@root/*": [
+                "./*"
+            ],
+            "@components/*": [
+                "resources/front/js/components/*"
+            ],
+            "@partials/*": [
+                "resources/front/js/partials/*"
+            ],
+            "@pages/*": [
+                "resources/front/js/pages/*"
+            ],
+            "@lang/*": [
+                "resources/front/js/system/translations/lang/*"
+            ]
+        }
+    },
+    "exclude": [
+        "node_modules", "static", "static.www"
+    ]
+}

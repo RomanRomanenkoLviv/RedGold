@@ -1,0 +1,16 @@
+{
+    "brandName": "Website Name",
+
+    "pages": [{
+            "id": "00",
+            "href": "00-home.html",
+            "title": "Home"
+        },
+        {
+            "id": "01",
+            "href": "01-about.html",
+            "title": "About",
+            "hasNav": true
+        }
+    ]
+}

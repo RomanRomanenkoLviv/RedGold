@@ -1,0 +1,40 @@
+.c-footer {
+	background-color: $black;
+	color: $white;
+	width: 100%;
+
+	&-wrap {
+		display: flex;
+		padding: 15px 0;
+		align-items: center;
+	}
+
+	&-left,
+	&-right {
+		width: 50%;
+	}
+
+	&-right {
+		text-align: right;
+	}
+
+	p {
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.c-ideil {
+
+		&-link {
+			color: currentColor;
+		}
+
+		img,
+		svg {
+			width: 46px;
+			height: auto;
+		}
+	}
+}

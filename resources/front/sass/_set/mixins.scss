@@ -1,0 +1,33 @@
+//# Mixins
+//
+//*
+
+@mixin font-face($family, $filepath, $weight: normal, $style: normal) {
+	@font-face {
+		font-family: $family;
+		font-display: swap;
+		src: local($family),
+			url('#{$filepath}.woff') format('woff'),
+			url('#{$filepath}.ttf') format('truetype');
+		font-weight: $weight;
+		font-style: $style;
+	}
+}
+
+@mixin fw($class, $value) {
+	#{$class} {
+		font-weight: $value !important;
+	}
+}
+
+@mixin zoom($parameter, $value) {
+	#{$parameter}: $value;
+
+	@include media-breakpoint-up(xl) {
+		#{$parameter}: #{unit(number($value))}vw;
+
+		.with-sidebar & {
+			#{$parameter}: #{unit(number($value), 0.7383)}vw;
+		}
+	}
+}

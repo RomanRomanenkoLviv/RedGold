@@ -2,6 +2,8 @@
 
 namespace App\Exceptions;
 
+use Exception;
+use Illuminate\Support\Facades\View;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
 
@@ -36,8 +38,24 @@ class Handler extends ExceptionHandler
      */
     public function report(Throwable $exception)
     {
+        if (app()->bound('sentry') && $this->shouldReport($exception)) {
+            app('sentry')->captureException($exception);
+        }
+        
         parent::report($exception);
     }
+    /**
+     * Register the error template hint paths.
+     *
+     * @return void
+     */
+    protected function registerErrorViewPaths()
+    {
+        View::replaceNamespace('errors', [
+            resource_path('front/views/errors'),
+        ]);
+    }
+
 
     /**
      * Render an exception into an HTTP response.

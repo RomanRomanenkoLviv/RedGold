@@ -1,0 +1,47 @@
+.c-header {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	margin-bottom: 30px;
+
+	&-wrap {
+		padding: 15px 0;
+		display: flex;
+		align-items: center;
+	}
+
+	&-logo {
+
+		&__link {
+			color: currentColor;
+
+			&:hover {
+				color: $primary;
+			}
+		}
+	}
+
+	&-nav {
+		flex-grow: 1;
+		text-align: right;
+
+		&__list {
+			display: inline-flex;
+			align-items: center;
+			padding: 0;
+			margin: 0 -10px;
+			list-style: none;
+		}
+
+		&__link {
+			color: currentColor;
+			text-decoration: underline;
+			padding: 10px;
+
+			&:hover {
+				color: $primary;
+			}
+		}
+	}
+}

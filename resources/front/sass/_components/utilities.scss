@@ -1,0 +1,11 @@
+// Font weight
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+	@include media-breakpoint-up($breakpoint) {
+		$infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+		@each $class, $value in $fw {
+			@include fw(".fw#{$infix}-#{$class}", $value);
+		}
+	}
+}
