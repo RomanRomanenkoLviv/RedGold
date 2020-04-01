@@ -21,7 +21,7 @@ class UsersTableSeeder extends Seeder
                 'name' => 'Roman Zhyla',
             ],
             [
-                'email' => 'vorest@gmail.com',
+                'email' => 'admin@ucr.com.ua',
                 'name' => 'Orest Vertyporoh',
             ]
         ];
