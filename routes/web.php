@@ -39,7 +39,7 @@ Route::prefix('login')->group(function () {
 // CONTROL
 Route::prefix('control')->group(function() {
     Route::middleware('auth:control')->group(function () {
-        Route::get('/', 'HomeController@index')->name('home');
+        Route::get('/', 'HomeController@index')->name('control');
     });
 
     /**

@@ -14,6 +14,9 @@
                     <li class="c-header-nav__item">
                         <a href="{{ route('cabinet.index') }}" class="c-header-nav__link">Cabinet</a>
                     </li>
+                    <li class="c-header-nav__item">
+                        <a href="{{ route('control') }}" class="c-header-nav__link">Admin Panel</a>
+                    </li>
                 </ul>
             </nav>
         </div>
