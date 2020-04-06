@@ -23,33 +23,33 @@
                 <v-toolbar-title>Login form</v-toolbar-title>
                 <v-spacer />
               </v-toolbar>
-              <v-card-text>
-                <v-form @submit.prevent="send">
-                  <v-text-field
-                    v-model="form.email"
-                    label="Email"
-                    name="email"
-                    prepend-icon="person"
-                    type="text"
-                  />
-                  <span v-if="errors.email">{{ errors.email[0] }}</span>
+              <v-form ref="form" @submit.prevent="send" method="POST">
+                  <v-card-text>
+                    <v-text-field
+                      v-model="form.email"
+                      label="Email"
+                      name="email"
+                      prepend-icon="person"
+                      type="text"
+                    />
+                    <span v-if="errors.email">{{ errors.email[0] }}</span>
 
-                  <v-text-field
-                    v-model="form.password"
-                    id="password"
-                    label="Password"
-                    name="password"
-                    prepend-icon="lock"
-                    type="password"
-                  />
-                  <span v-if="errors.password">{{ errors.password[0] }}</span>
+                    <v-text-field
+                      v-model="form.password"
+                      id="password"
+                      label="Password"
+                      name="password"
+                      prepend-icon="lock"
+                      type="password"
+                    />
+                    <span v-if="errors.password">{{ errors.password[0] }}</span>
 
-                </v-form>
-              </v-card-text>
-              <v-card-actions>
-                <v-spacer />
-                <v-btn color="primary" @click.prevent="send">Login</v-btn>
-              </v-card-actions>
+                </v-card-text>
+                <v-card-actions>
+                  <v-spacer />
+                  <v-btn color="primary" type="submit" @click.prevent="send">Login</v-btn>
+                </v-card-actions>
+              </v-form>
             </v-card>
           </v-col>
         </v-row>
