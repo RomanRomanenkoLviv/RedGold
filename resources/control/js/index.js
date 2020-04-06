@@ -46,6 +46,7 @@ if (document.getElementById('loginform')) {
     new Vue({
         el: '#loginform',
         vuetify,
+        routes,
         components: {
             loginForm
         }
