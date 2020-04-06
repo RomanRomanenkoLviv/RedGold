@@ -17,6 +17,7 @@ import VueRouter from 'vue-router'
 import routes from './routes'
 
 import Index from './pages/Index.vue'
+import loginForm from './components/login'
 
 Vue.use(VueRouter)
 
@@ -38,5 +39,15 @@ if (document.getElementById('app')) {
         router,
         store,
         components: { Index }
+    })
+}
+
+if (document.getElementById('loginform')) {
+    new Vue({
+        el: '#loginform',
+        vuetify,
+        components: {
+            loginForm
+        }
     })
 }

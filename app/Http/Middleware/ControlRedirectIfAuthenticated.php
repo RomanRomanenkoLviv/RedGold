@@ -18,7 +18,7 @@ class ControlRedirectIfAuthenticated
     public function handle($request, Closure $next, $guard = null)
     {
         if (Auth::guard('control')->check()) {
-            return redirect()->route('home');
+            return redirect()->route('control');
         }
 
         return $next($request);
