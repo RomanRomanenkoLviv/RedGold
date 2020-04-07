@@ -12,12 +12,12 @@
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="theme-color" content="#ffffff">
 
-        <!-- <link rel="stylesheet" href="{{ asset(mix('/css/font-awesome.min.css', 'control')) }}" type="text/css" />
+        <!-- <link rel="stylesheet" href="{{ asset(mix('/css/font-awesome.min.css', 'control')) }}" type="text/css" /> -->
         <link rel="stylesheet" href="{{ asset(mix('theme/theme.css', 'control')) }}" type="text/css" />
 
         <script src="https://cdn.ckeditor.com/4.6.1/full/ckeditor.js"></script>
 
-        <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"> -->
+        <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
 
         <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">

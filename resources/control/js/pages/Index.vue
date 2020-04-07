@@ -45,6 +45,7 @@
               v-for="(child, i) in item.children"
               :key="i"
               link
+              @click="go(child.route)"
             >
               <v-list-item-action v-if="child.icon">
                 <v-icon>{{ child.icon }}</v-icon>
@@ -60,6 +61,7 @@
             v-else
             :key="item.text"
             link
+            @click="go(item.route)"
           >
             <v-list-item-action>
               <v-icon>{{ item.icon }}</v-icon>
@@ -81,8 +83,9 @@
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-toolbar-title
-        style="width: 300px"
+        style="width: 300px; cursor: pointer;"
         class="ml-0 pl-4"
+        @click="go('main')"
       >
         <span class="hidden-sm-and-down">RED GOLD</span>
       </v-toolbar-title>
@@ -117,7 +120,7 @@
     </v-app-bar>
     <v-content>
       <v-container
-        class="fill-height"
+        class="d-flex fill-height align-items-start"
         fluid
       >
         <router-view />
@@ -230,24 +233,27 @@
       dialog: false,
       drawer: null,
       items: [
-        { icon: 'mdi-television-guide', text: 'Сайти' },
-        { icon: 'mdi-contacts', text: 'Користувачі' },
-        { icon: 'mdi-history', text: 'Останні дії' },
-        { icon: 'mdi-settings', text: 'Налаштування' },
+        { icon: 'mdi-television-guide', text: 'Сайти', route: 'sites' },
+        { icon: 'mdi-contacts', text: 'Користувачі', route: 'users' },
+        { icon: 'mdi-history', text: 'Останні дії', route: 'actions' },
+        { icon: 'mdi-settings', text: 'Налаштування', route: 'settings' },
         {
           icon: 'mdi-chevron-up',
           'icon-alt': 'mdi-chevron-down',
           text: 'Більше',
           model: false,
           children: [
-            { text: 'Імпорт' },
-            { text: 'Експорт' },
+            { text: 'Імпорт', route: 'import' },
+            { text: 'Експорт', route: 'export' },
           ],
         },
-        { icon: 'mdi-help-circle', text: 'Допомога' },
+        { icon: 'mdi-help-circle', text: 'Допомога', route: 'help' },
       ],
     }),
     methods: {
+      go(route) {
+        this.$router.push({ name:route })
+      },
       exit() {
         axios.post(route('logout'), {_token: window.csrf_token}).then(response => {
             window.location.href = route('control').url()
