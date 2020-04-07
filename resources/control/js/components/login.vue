@@ -77,6 +77,7 @@
     },
     methods: {
       send () {
+        console.log(route(), route('login'))
         this.errors = {}
 
         axios.post(route('login'), this.form).then(response => {
