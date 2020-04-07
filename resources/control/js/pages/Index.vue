@@ -95,12 +95,6 @@
         class="hidden-sm-and-down"
       />
       <v-spacer />
-      <v-btn icon>
-        <v-icon>mdi-apps</v-icon>
-      </v-btn>
-      <v-btn icon>
-        <v-icon>mdi-bell</v-icon>
-      </v-btn>
       <v-btn
         icon
         large
@@ -110,9 +104,15 @@
           item
         >
           <v-img
-            src="https://cdn.vuetifyjs.com/images/logos/logo.svg"
+            :src="$store.state.user.gavatar"
             alt="Vuetify"
           /></v-avatar>
+      </v-btn>
+      <v-btn
+        icon
+        @click="exit"
+      >
+        <v-icon>mdi-exit-to-app</v-icon>
       </v-btn>
     </v-app-bar>
     <v-content>
@@ -220,6 +220,8 @@
 </template>
 
 <script>
+  import axios from 'axios'
+
   export default {
     props: {
       source: String,
@@ -228,6 +230,7 @@
       dialog: false,
       drawer: null,
       items: [
+        { icon: 'mdi-television-guide', text: 'Сайти' },
         { icon: 'mdi-contacts', text: 'Користувачі' },
         { icon: 'mdi-history', text: 'Останні дії' },
         { icon: 'mdi-settings', text: 'Налаштування' },
@@ -244,5 +247,14 @@
         { icon: 'mdi-help-circle', text: 'Допомога' },
       ],
     }),
+    methods: {
+      exit() {
+        axios.post(route('logout'), {_token: window.csrf_token}).then(response => {
+            window.location.href = route('control').url()
+        }).catch(errors => {
+          console.error(errors)
+        })
+      }
+    }
   }
 </script>

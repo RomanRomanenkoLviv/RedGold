@@ -4,9 +4,7 @@
     <index
         id="app"
         style="height: 100%;"
-        :data='@json([
-            'user' => Auth::guard('control')->user()
-        ])'
+        data-user='@json($userResource)'
     ></index>
 
 @endsection

@@ -32,7 +32,11 @@ const router = new VueRouter({
 //     }
 // })
 
-if (document.getElementById('app')) {
+let appElement = document.getElementById('app');
+
+if (appElement) {
+    store.commit('setUser', JSON.parse(appElement.dataset.user))
+
     const app = new Vue({
         el: '#app',
         vuetify,

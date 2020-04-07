@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Resources\User as UserResource;
 
 class HomeController extends Controller
 {
@@ -23,7 +24,11 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $user = auth()->user();
+        $userResource = new UserResource($user);
 
-        return view('control::index');
+        return view('control::index')->with([
+            'userResource' => $userResource
+        ]);
     }
 }

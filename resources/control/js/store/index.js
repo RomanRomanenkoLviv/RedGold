@@ -16,17 +16,9 @@ import { getters } from './getters';
 
 export default new Vuex.Store({
     state: {
-        user: '',
-        newFeedbackCount: 0,
-        newReservationTableCount: 0,
-        newOrdersCount: 0,
-        newReservationCakeCount: 0,
-        newReservationCakeCustomCount: 0,
+        user: ''
     },
     getters,
     actions,
     mutations,
-    // modules: {
-    //     test
-    // }
 });
