@@ -10,7 +10,7 @@
     ],
     "license": "MIT",
     "require": {
-        "php": "^7.2.5",
+        "php": "^7.4.4",
         "caouecs/laravel-lang": "^4.0",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^1.0",
@@ -31,7 +31,7 @@
     },
     "config": {
         "platform": {
-            "php": "7.3.13"
+            "php": "7.4.4"
         },
         "optimize-autoloader": true,
         "preferred-install": "dist",
@@ -59,9 +59,6 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
-        "post-install-cmd": [
-            "@php artisan allright:check --ansi"
-        ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
