@@ -1,4 +1,5 @@
 const mix = require('laravel-mix')
+const resourcesBasePath = './resources/control'
 var LiveReloadPlugin = require('webpack-livereload-plugin')
 
 mix.setPublicPath('static/control')
@@ -19,7 +20,9 @@ mix.webpackConfig({
     resolve: {
         alias: {
             '@root': __dirname,
-            '@common': path.resolve(__dirname, 'resources/control/js/components/common')
+            '@common': path.resolve(__dirname, 'resources/control/js/components/common'),
+            '@components': path.resolve(__dirname, resourcesBasePath + '/js/components'),
+            '@pages': path.resolve(__dirname, resourcesBasePath + '/js/pages')
         },
         extensions: [
             '.js',
