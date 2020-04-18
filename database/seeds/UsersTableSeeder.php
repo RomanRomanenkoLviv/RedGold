@@ -19,10 +19,18 @@ class UsersTableSeeder extends Seeder
             [
                 'email' => 'roman.zhyla.lviv@gmail.com',
                 'name' => 'Roman Zhyla',
+                'role_id' => 7,
             ],
             [
                 'email' => 'admin@ucr.com.ua',
                 'name' => 'Orest Vertyporoh',
+                'role_id' => 7,
+            ],
+            [
+                'email' => 'demo',
+                'name' => 'Demo User',
+                'password' => 'demo123',
+                'role_id' => 1,
             ]
         ];
 

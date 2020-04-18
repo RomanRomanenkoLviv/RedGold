@@ -1,6 +1,6 @@
 import Vue from 'vue'
 
-import vuetify from './vuetify' // path to vuetify export
+import vuetify from './vuetify'
 
 import store from './store/'
 

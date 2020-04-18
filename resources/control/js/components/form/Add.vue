@@ -68,7 +68,7 @@
             required: false
           },
           form: {
-            type: Object,
+            type: Array,
             required: false
           },
         }

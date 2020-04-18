@@ -120,10 +120,10 @@
     </v-app-bar>
     <v-content>
       <v-container
-        class="d-flex fill-height align-items-start"
+        class="d-flex fill-height align-items-start white"
         fluid
       >
-        <router-view />
+        <router-view class="white"/>
       </v-container>
     </v-content>
   </v-app>
