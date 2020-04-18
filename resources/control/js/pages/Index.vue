@@ -165,6 +165,7 @@
             window.location.href = route('control').url()
         }).catch(errors => {
           console.error(errors)
+          window.location.href = route('control').url()
         })
       }
     }
