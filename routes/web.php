@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 // COMMON
 Route::get('/', function () {
+    return redirect()->route('control');
     return view('front::pages.homepage.index');
 })->name('homepage');
 
