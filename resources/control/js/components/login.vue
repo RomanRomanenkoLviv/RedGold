@@ -29,7 +29,6 @@
                       v-model="form.email"
                       label="Email"
                       name="email"
-                      prepend-icon="person"
                       type="text"
                     />
                     <span v-if="errors.email">{{ errors.email[0] }}</span>
@@ -39,7 +38,6 @@
                       id="password"
                       label="Password"
                       name="password"
-                      prepend-icon="lock"
                       type="password"
                     />
                     <span v-if="errors.password">{{ errors.password[0] }}</span>

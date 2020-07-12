@@ -21,18 +21,26 @@
               :key="index"
             >
               <td
-                v-for="(value, key) in item"
+                v-for="(value, key) in fields"
               >
-                <slot :name="key">{{ value }}</slot>
-              </td>
-              <td v-if="fields.control">
-                <v-btn
-                  v-if="fields.control.edit"
-                  icon
-                  color="red"
+                <slot
+                    v-if="key != 'control'"
+                    :name="key"
                 >
-                  <v-icon>mdi-pencil</v-icon>
-                </v-btn>
+                    {{ item[key] }}
+                </slot>
+                  <router-link
+                      v-if="key == 'control'"
+                      :to="'/sites/' + item.id"
+                  >
+                      <v-btn
+                          v-if="fields.control.edit"
+                          icon
+                          color="red"
+                      >
+                          <v-icon>mdi-pencil</v-icon>
+                      </v-btn>
+                  </router-link>
               </td>
             </tr>
           </tbody>
@@ -56,7 +64,7 @@
             required: false
           },
           items: {
-            type: Object,
+            type: Array,
             required: false
           },
         }
