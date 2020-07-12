@@ -77,8 +77,8 @@
       send () {
         this.errors = {}
 
-        axios.post(route('login'), this.form).then(response => {
-            window.location.href = route('control').url()
+        axios.post('/control/login', this.form).then(response => {
+            window.location.href = '/control'
         }).catch(errors => {
           if (errors.response && errors.response.data && errors.response.data.errors) {
               this.errors = {...errors.response.data.errors}

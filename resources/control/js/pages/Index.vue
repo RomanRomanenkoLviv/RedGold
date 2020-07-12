@@ -161,11 +161,11 @@
         this.$router.push({ name:route })
       },
       exit() {
-        axios.post(route('logout'), {_token: window.csrf_token}).then(response => {
-            window.location.href = route('control').url()
+        axios.post('/logout', {_token: window.csrf_token}).then(response => {
+            window.location.href = '/control'
         }).catch(errors => {
           console.error(errors)
-          window.location.href = route('control').url()
+          window.location.href = '/control'
         })
       }
     }
