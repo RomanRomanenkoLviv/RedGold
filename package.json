@@ -30,7 +30,7 @@
     "@babel/runtime": "^7.8.3",
     "@sindresorhus/slugify": "^0.9.1",
     "@yonyou-cloud/eslint-config": "0.0.1",
-    "axios": "^0.18",
+    "axios": "^0.21",
     "babel-eslint": "^10.0.3",
     "bootstrap": "^4.4.1",
     "bootstrap-vue": "^2.2.2",
